@@ -6,12 +6,6 @@ $breakpoints-up: (
   "xlarge": "1400px",
 );
 
-$breakpoints-down: (
-  "small": "639px",
-  "medium": "1023px",
-  "large": "1399px",
-);
-
 @mixin breakpoint-up($break) {
   @media screen and (min-width: map-get($breakpoints-up, $break)){
     @content;
