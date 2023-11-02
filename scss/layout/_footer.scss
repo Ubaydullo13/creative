@@ -1,0 +1,48 @@
+@use "../abstract";
+
+.footer {
+  @include abstract.grid;
+
+  padding: 4.875rem 0 6.25rem;
+  position: relative;
+
+  @include abstract.breakpoint-up(medium) {
+    align-items: center;
+    justify-content: center;
+  }
+
+  h2 {
+    margin-bottom: 2.9375rem;
+    grid-column: 2 / 9;
+
+    @include abstract.breakpoint-up(medium) {
+      grid-column: 2 / 7;
+    }
+  }
+
+  .button--primary {
+    grid-column: 2 / 8;
+    grid-row: 2;
+    justify-self: start;
+
+    @include abstract.breakpoint-up(medium) {
+      grid-column: 7 / 10;
+      grid-row: 1;
+      justify-self: end;
+    }
+  }
+
+  &::before {
+    @include abstract.breakpoint-up(large) {
+      content: "";
+      background-image: url(../../images/tail-tablet-mobile.svg);
+      background-size: cover;
+      position: absolute;
+      width: 135px;
+      height: 60px;
+      left: 0;
+      top: 50%;
+      transform: translate(-67.5px, -50%);
+    }
+  }
+}

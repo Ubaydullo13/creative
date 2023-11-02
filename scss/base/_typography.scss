@@ -1,0 +1,90 @@
+@use "../abstract";
+
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;800&display=swap');
+
+
+
+$font: 'Commissioner', sans-serif;
+$regular:400;
+$extraBold:800;
+
+
+h1,h2,h3{
+    font-family: $font;
+    font-weight: $extraBold;
+}
+
+h1{
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin:1rem 0;
+
+    @include abstract.breakpoint-up(medium){
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    @include abstract.breakpoint-up(large){
+        font-size: 5rem;
+        line-height: 5.5rem;
+    }
+}
+
+h2{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-top: 1.375rem;
+
+    @include abstract.breakpoint-up(large) {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+}
+
+h3{
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+
+    @include abstract.breakpoint-up(large){
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+}
+
+
+h4{
+    font-size: 1rem;
+}
+
+h5{
+    font-size: 1rem;
+    font-weight: $regular;
+    text-decoration: underline;
+}
+
+h6{
+    font-size: 0.9rem;
+    font-weight: $regular;
+    text-decoration: underline;
+}
+
+p{
+    font-size: 0.9375rem;
+    font-weight: $regular;
+    line-height: 1.5625rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+
+    @include abstract.breakpoint-up(large){
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+}
+
+.color--primary{
+    color: abstract.$primary3;
+}
+
+.color--light{
+    color:abstract.$primary1;
+}

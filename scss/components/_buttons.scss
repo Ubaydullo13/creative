@@ -1,0 +1,91 @@
+@use '../abstract';
+@use '../base';
+
+.button{
+    text-decoration: none;
+    font-weight: base.$extraBold;
+    text-transform: capitalize;
+    display: inline-block;
+    transition: background-color 300ms ease-in-out;
+    border:none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: abstract.$primary2;
+    }
+
+    &--primary{
+        @extend .button;
+        font-size: 1.125rem;
+        color: abstract.$primary1;
+        padding: 1.5625rem 2.1875rem;
+        background-color: abstract.$primary3;
+    }
+
+    &--secondary{
+        @extend .button;
+        font-size: 1rem;
+        color: abstract.$primary1;
+        padding: 1.4375rem 1.125rem;
+        background-color: abstract.$secondary2;
+
+        &:hover{
+            background-color: abstract.$secondary1;
+        }
+
+        @include abstract.breakpoint-up(large){
+            padding-inline:2.75rem ;
+        }
+    }
+
+    &--underline{
+        @extend .button;
+        font-size: 0.9375rem;
+        color: abstract.$primary3;
+        background-color: transparent;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: color 300ms ease-in-out;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            width: 100%;
+            background-color: abstract.$primary3;
+            transition: 300ms ease-in-out;
+        }
+
+        &:hover{
+            color: abstract.$primary2;
+            background-color: transparent;
+
+            &::after{
+            background-color: abstract.$primary2;
+            }
+        }
+
+        @include abstract.breakpoint-up(large){
+            font-size: 1.125rem;
+        }
+    }
+
+    &--arrow{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        svg g{
+            transition: stroke 300ms ease-in-out;
+            fill: black;
+
+
+            &:hover{
+                stroke: abstract.$primary2;
+            }
+        }
+    }
+}
